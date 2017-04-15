@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<title>Energy Audit</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body id = "itsBody">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="38px" src="ealogo.png">
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+<img height="40px" style="border-radius: 25px; margin-top: 5px;" src="user.png">
+        <li><a href="#">UserName</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+   <div class="header"> 
+
+<h1 align="center"><img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="50px" src="PSG.png">PSG COLLEGE OF TECHNOLOGY<br/>ENERGY AUDIT</h1> 
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-sm-4 col-xs-6">
+    </div>
+  
+<div id = "fullDiv">
+  <div id="sideOne" class="container col-lg-4 col-md-4 col-sm-6 col-xs-10" >
+  <div class="form-group">
+      <h1>ADMIN LOGIN</h1>
+   </div>
+   <div >
+    <div class="form-group">
+      <label  for="uname">UserName</label>
+      <div >  
+          <input type="name" name="uname" class="form-control" id="uname">
+      </div>
+   </div>
+  <div class="form-group">
+      <label  for="pwd">Password</label>
+      <div >
+          <input type="password" name="pwd" class="form-control" id="pwd">
+      </div>
+   </div>
+  </div>
+  <button class="btn btn-primary" onclick="logme();" >LOGIN</button>
+  </div>
+    
+</div>
+
+
+
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  
+  function logme() {
+
+    if($('#uname').val() == "admin" && $('#pwd').val() == "admin"){
+
+      window.location.href="plantip.html";
+
+    }
+
+    
+  }
+
+</script>
+
+</body>
+</html>

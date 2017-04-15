@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head><title>Energy Report</title></head>
+<body>
+<table >
+<tr><th colspan="2">COMPARISON BETWEEN EXIXTING AND NEW ENERGY EFFICIENCY MOTOR</th></tr>
+<tr><th>PLANT</th><th><label for="plantname"> plantname </label></th></tr>
+<tr><th>EQUIPMENT</th><th><label for="equipmentname"> equipmentname </label></th></tr>
+<tr><th>EXISTING MOTOR</th><th>ENERGY SAVING MOTOR</th></tr>
+	    <tr>	          
+	    	   	<td><br/><label >KW : </label><label for="kw_em"> kw_em </label><br/> </td>
+	    	   	<td><br/><label >KW: </label><label for="kw_esm"> kw_esm </label><br/> </td>     
+	    </tr>
+	    <tr>	          
+	    	   	<td><br/><label >Voltage(Volts) : </label><label for="voltage_em"> voltage_em </label> <br/></td>
+	    	   	<td><br/><label >Voltage(Volts) : </label><label for="voltage_esm"> voltage_esm </label><br/> </td>     
+	    </tr>
+	    <tr>	          
+	    	   	<td><br/><label >Speed(RPM) : </label><label for="speed_em"> speed_em </label> <br/></td>
+	    	   	<td><br/><label >Speed(RPM): </label><label for="speed_esm"> speed_esm </label><br/> </td>     
+	    </tr>
+	    <tr>	          
+	    	   	<td><br/><label >Enclosure : </label><label for="enclosure_em"> enclosure_em </label><br/> </td>
+	    	   	<td><br/><label >Enclosure : </label><label for="enclosure_esm"> enclosure_esm </label><br/> </td>     
+	    </tr>
+	     <tr>	          
+	    	   	<td><br/><label >Frame : </label><label for="frame_em"> frame_em </label> <br/></td>
+	    	   	<td><br/><label >Frame : </label><label for="frame_esm"> frame_esm </label><br/> </td>     
+	    </tr>
+	     <tr>	          
+	    	   	<td><br/><label >Part_Load(%) : </label><label for="partload_em"> partload_em </label><br/> </td>
+	    	   	<td><br/><label >Part_Load(%) : </label><label for="partload_esm"> partload_esm </label><br/> </td>     
+	    </tr>
+	    <tr>	          
+	    	   	<td><br/><label >Part_Load Efficiency(%) : </label><label for="partloadefficiency_em"> partloadefficiency_em </label><br/> </td>
+	    	   	<td><br/><label >Part_Load Efficiency(%) : </label><label for="partloadefficiency_esm"> partloadefficiency_esm </label><br/> </td>     
+	    </tr>
+	    <tr><th colspan="2" align="center"><br/>Energy saving</th></tr>
+	   	          
+	    	   	<tr><td colspan="2" align="center"><br/><label >Running_Hrs/Year : </label><label for="runninghrsperyear"> runninghrsperyear</label> <br/></td></tr>
+	    	   	<tr><td colspan="2"  align="center"><br/><label >Saved_cost(Rs) : </label><label for="savedcost"> savedcost </label><br/> </td></tr>
+	    	   	<tr><td colspan="2" align="center"><br/><label >Energy Savinggng(KWH) : </label><label for="energysaving"> energysaving </label><br/> </td></tr> 
+	    	   	<tr><td colspan="2" align="center"><br/><label >Pay_Back(Months): </label><label for="paybackr"> paybackr </label><br/> </td></tr> 
+	    	   	<tr><td colspan="2" align="center"><br/><label >Electricity_Cost/Unit(Rs): </label><label for="electricitycostperunit"> electricitycostperunit </label><br/> </td></tr>
+</table>
+	    	   	<script type="text/javascript" src="js/jQuery.min.js"></script> 
+<script type="text/javascript">
+	
+
+
+
+   $.ajax({
+  type: 'POST',
+  url: 'php/repgen.php',
+  data: {},
+  beforeSend:function(){
+    // this is where we append a loading image
+    console.log("imgld");
+    
+  },
+  success:function(data){
+    // successful request; do something with the data
+    var obj1 = JSON.parse(data);
+  
+
+	 jQuery("label[for='kw_em']").html(obj1[0]["kw"]);
+	 jQuery("label[for='voltage_em']").html(obj1[0]["volt"]);
+	 jQuery("label[for='speed_em']").html(obj1[0]["spe"]);
+	 jQuery("label[for='enclosure_em']").html(obj1[0]["enc"]);
+	 jQuery("label[for='frame_em']").html(obj1[0]["fra"]);
+	 jQuery("label[for='partload_em']").html(obj1[0]["pl"]);
+	 jQuery("label[for='partloadefficiency_em']").html(obj1[0]["efp"]);
+
+	 jQuery("label[for='kw_esm']").html(obj1[0]["kw1"]);
+	 jQuery("label[for='voltage_esm']").html(obj1[0]["volt1"]);
+	 jQuery("label[for='speed_esm']").html(obj1[0]["spe1"]);
+	 jQuery("label[for='enclosure_esm']").html(obj1[0]["enc1"]);
+	 jQuery("label[for='frame_esm']").html(obj1[0]["fra1"]);
+	 jQuery("label[for='partload_esm']").html(obj1[0]["pl1"]);
+	 jQuery("label[for='partloadefficiency_esm']").html(obj1[0]["efp1"]);	 
+	 
+	 jQuery("label[for='runninghrsperyear']").html(obj1[0]["rh"]);
+	 jQuery("label[for='savedcost']").html(obj1[0]["cst"]);
+	 jQuery("label[for='energysaving']").html(obj1[0]["enr"]);
+	 jQuery("label[for='paybackr']").html(obj1[0]["payb"]);
+	 jQuery("label[for='electricitycostperunit']").html(obj1[0]["cost"]);
+	 
+
+	 jQuery("label[for='plantname']").html(obj1[0]["plnid"]);
+	 jQuery("label[for='equipmentname']").html(obj1[0]["erq"]);
+	 
+  },
+  error:function(){
+    // failed request; give feedback to user
+    console.log("err");
+    $('#ajax-panel').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+  }
+});
+
+
+</script>
+	</body>
+
+</html>

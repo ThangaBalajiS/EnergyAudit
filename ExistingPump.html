@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body id = "itsBody">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="38px" src="PSG.png">
+      <img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="38px" src="ealogo.png">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="plantip.html">Plants</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Equipments <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="motor.html">Motors</a></li>
+            <li><a href="transformer.html">Transformers</a></li>
+            <li><a href="lighting.html">Lighting</a></li>
+            <li><a href="ExistingPump.html">Pumps</a></li>
+            <li><a href="ExistingCompressor.html">Compressor</a></li>
+          </ul>
+        </li>
+        <li><a href="standard_motor.html">Standard Motor</a></li>
+        <li><a href="EnergyEfficientMotor.html">Efficient Motor</a></li>
+        <li><a href="EnergyEfficientPump.html">Efficient Pump</a></li>
+
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analysis <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="EnergyAnalysisMotor.html">Energy Efficient Motor</a></li>
+            <li><a href="Standardmotorvsenergyeffmotor.html">Standard Motor vs Energy Eff. Motor</a></li>
+            <li><a href="#">Existing Transformer</a></li>
+            <li><a href="ExistingPump.html">Pumps</a></li>
+            <li><a href="ExistingCompressor.html">Compressor</a></li>
+            <li><a href="newtransformer.html">New Transformer</a></li>
+            <li><a href="#">New Cable</a></li>
+            <li><a href="capacitorbank.html">Capacitor Bank</a></li>
+            <li><a href="#">Lighting Analysis</a></li>
+            <li><a href="#">Compressor Analysis</a></li>
+            <li><a href="#">Existing Pump vs Energy Eff. Pump</a></li>  
+          </ul>
+        </li>
+
+      </ul>
+
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+<img height="40px" style="border-radius: 25px; margin-top: 5px;" src="user.png">
+        <li><a href="#">UserName</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  
+<form class="form-horizontal">
+<div id = "fullDiv">
+	<div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6" >
+	<div class="form-group">
+ 	   	<label  >General</label>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="pumpid">Pump_ID</label>
+ 	   	<div>
+ 	     		<input type="text" name="pumpid" class="form-control" id="pumpid">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="plantid">Plant_ID</label>
+ 	   	<div>
+ 	     		<input type="number" name="plantid" class="form-control" id="plantid">
+ 	   	</div>
+ 	 </div>
+ 	 
+ 	  <div class="form-group">
+ 	   	<label  for="equipmentcode">Equipment_Code</label>
+ 	   	<div >
+ 	     		<input type="text" name="equipmentcode"  class="form-control" id="equipmentcode">
+ 	   	</div>
+ 	 </div>
+	<div class="form-group">
+ 	   	<label  for="number">Number</label>
+ 	   	<div >
+ 	     		<input type="number" name="number"  class="form-control" id="number">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="type">Type</label>
+ 	   	<div >
+ 	     		<input type="text" name="type"  class="form-control" id="type">
+ 	   	</div>
+ 	 </div>
+	
+ 	  <div class="form-group">
+ 	   	<label  for="name">Name</label>
+ 	   	<div >
+ 	     		<input type="text" name="name"  class="form-control" id="name">
+ 	   	</div>
+ 	 </div>
+	
+         <div class="form-group">
+ 	   	<label  >Motor</label>
+ 	 </div>
+	
+     
+	 <div class="form-group">
+ 	   	<label  for="motorrating">Motor-Rating</label>
+ 	   	<div >
+ 	     		<input type="number" name="motorrating" placeholder="KW"  class="form-control" id="motorrating">
+ 	   	</div>
+ 	 </div>
+	<div class="form-group">
+ 	   	<label  for="motorefficiency">Motor Efficiency</label>
+ 	   	<div >
+ 	     		<input type="number" name="motorefficiency" placeholder="%"  class="form-control" id="motorefficiency">
+ 	   	</div>
+ 	 </div>
+	<div class="form-group">
+ 	   	<label  for="motorinput">Motor Input</label>
+ 	   	<div >
+ 	     		<input type="number" name="motorinput" placeholder="KW" class="form-control" id="motorinput">
+ 	   	</div>
+ 	 </div>
+	
+	
+	</div>
+ 	<div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6">
+	<div class="form-group">
+ 	   	<label  >Parameters</label>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="flow">Flow</label>
+ 	   	<div >
+ 	     		<input type="number"  name="flow" placeholder="M3/Sec"  class="form-control" id="flow">
+ 	   	</div></div>
+
+ 	 	<div class="form-group">
+ 	   	<label  for="head">Head</label>
+ 	   	<div >
+ 	     		<input type="number"  name="head" placeholder="Meters"  class="form-control" id="head">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="speed">Speed</label>
+ 	   	<div >
+ 	     		<input type="number" name="speed" placeholder="RPM" class="form-control" id="speed">
+ 	   	</div>
+ 	</div>
+ 	<div class="form-group">
+ 	   	<label  for="shaftpower">Shaft Power</label>
+ 	   	<div >
+ 	     		<input type="number" name="shaftpower" placeholder="KW" class="form-control" id="shaftpower">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="ratedefficiency">Rated Efficiency</label>
+ 	   	<div >
+ 	     		<input type="number" name="ratedefficiency" placeholder="%"  class="form-control" id="ratedefficiency">
+ 	   	</div>
+ 	 </div>
+	<div class="form-group">
+ 	   	<label  for="effatexistingload">Eff. at Existing Load</label>
+ 	   	<div >
+ 	     		<input type="number" name="effatexistingload" placeholder="%" class="form-control" id="effatexistingload">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="impellerdia">ImpellerDia</label>
+ 	   	<div >
+ 	     		<input type="number" name="impellerdia" placeholder="MM" class="form-control" id="impellerdia">
+ 	   	</div>
+ 	 </div>
+ 	
+ 	
+	<div class="form-group">
+ 	   	<label  for="hydraulicpower">Hydraulic Power</label>
+ 	   	<div >
+ 	     		<input type="number" name="hydraulicpower" placeholder="KW" class="form-control" id="hydraulicpower">
+ 	   	</div>
+ 	 </div>
+ 	<div class="form-group">
+ 	   	<label  for="shaftpowerexisting">Shaft Power Existing</label>
+ 	   	<div >
+ 	     		<input type="number" name="shaftpowerexisting" placeholder="KW" class="form-control" id="shaftpowerexisting">
+ 	   	</div>
+ 	 </div>																					
+	<div class="form-group">
+ 	   	<label  for="headexisting">Head_Existing</label>
+ 	   	<div >
+ 	     		<input type="number" name="headexisting" placeholder="Meters" class="form-control" id="headexisting">
+ 	   	</div>
+ 	 </div>
+ 	
+	<div class="form-group">
+ 	   	<label  for="overallefficiency">Overall Efficiency</label>
+ 	   	<div >
+ 	     		<input type="number" name="overallefficiency"  placeholder="%" class="form-control" id="overallefficiency">
+ 	   	</div>
+ 	 </div>
+
+ 	
+ <button type="button" class="btn btn-primary">New</button>
+<button type="button" class="btn btn-primary">Delete</button>
+<button type="button" class="btn btn-primary">Save</button>
+<button type="button" class="btn btn-primary">Close</button>
+
+  </div>
+  
+  </div>
+ </form>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body id = "itsBody">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="38px" src="PSG.png">
+      <img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="38px" src="ealogo.png">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="plantip.html">Plants</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Equipments <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="motor.html">Motors</a></li>
+            <li><a href="transformer.html">Transformers</a></li>
+            <li><a href="lighting.html">Lighting</a></li>
+            <li><a href="ExistingPump.html">Pumps</a></li>
+            <li><a href="ExistingCompressor.html">Compressor</a></li>
+          </ul>
+        </li>
+        <li><a href="standard_motor.html">Standard Motor</a></li>
+        <li><a href="EnergyEfficientMotor.html">Efficient Motor</a></li>
+        <li><a href="EnergyEfficientPump.html">Efficient Pump</a></li>
+
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analysis <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="EnergyAnalysisMotor.html">Energy Efficient Motor</a></li>
+            <li><a href="Standardmotorvsenergyeffmotor.html">Standard Motor vs Energy Eff. Motor</a></li>
+            <li><a href="#">Existing Transformer</a></li>
+            <li><a href="ExistingPump.html">Pumps</a></li>
+            <li><a href="ExistingCompressor.html">Compressor</a></li>
+            <li><a href="newtransformer.html">New Transformer</a></li>
+            <li><a href="#">New Cable</a></li>
+            <li><a href="capacitorbank.html">Capacitor Bank</a></li>
+            <li><a href="#">Lighting Analysis</a></li>
+            <li><a href="#">Compressor Analysis</a></li>
+            <li><a href="#">Existing Pump vs Energy Eff. Pump</a></li>  
+          </ul>
+        </li>
+
+      </ul>
+
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+<img height="40px" style="border-radius: 25px; margin-top: 5px;" src="user.png">
+        <li><a href="#">UserName</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<form class="form-horizontal">
+<div id = "fullDiv">
+	<div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6" >
+	<div class="form-group">
+ 	   	<label  for="plant">Plant</label>
+ 	   	<div>
+ 	     		<input type="text" name="plant" class="form-control" id="plant">
+ 	   	</div>
+ 	 </div>
+ 	 
+	 <div class="form-group">
+ 	  <h3> 	<label  for="pumpid">Parameters:Existing Compressor</label></h3>
+ 	   </div>
+ 	  <div class="form-group">
+ 	   	<label  for="equipmentcode">Equipment_Code</label>
+ 	   	<div >
+ 	     		<input type="text" name="equipmentcode"  class="form-control" id="equipmentcode">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="serialno">Serial No.</label>
+ 	   	<div >
+ 	     		<input type="number" name="serialno"  class="form-control" id="serialno">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="make">Make</label>
+ 	   	<div >
+ 	     		<input type="text" name="make"  class="form-control" id="make">
+ 	   	</div>
+ 	 </div>
+	
+ 	 <div class="form-group">
+ 	   	<label  for="type">Type</label>
+ 	   	<div >
+ 	     		<input type="text" name="type"  class="form-control" id="type">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="capacity">Capacity</label>
+ 	   	<div >
+ 	     		<input type="number" name="capacity"  placeholder="CFM" class="form-control" id="capacity">
+ 	   	</div>
+ 	 </div>
+	<div class="form-group">
+ 	   	<label  for="temp">Temp</label>
+ 	   	<div >
+ 	     		<input type="number" name="temp" placeholder="Deg C" class="form-control" id="temp">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="compressor">Discharge pressure</label>
+ 	   	<div >
+ 	     		<input type="number"  name="compressor" placeholder="Kg/Cm2"  class="form-control" id="compressor">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="volumetriceff">Volumetric Eff</label>
+ 	   	<div >
+ 	     		<input type="number"  name="volumetriceff" placeholder="%"  class="form-control" id="volumetriceff">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="motor">Motor</label>
+ 	   	<div >
+ 	     		<input type="number"  name="motor" placeholder="KW"  class="form-control" id="motor">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="shaftpower">Shaft Power</label>
+ 	   	<div >
+ 	     		<input type="number"  name="shaftpower" placeholder="KW"  class="form-control" id="shaftpower">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="designedspecificpowerconsumption">Designed Specific power consumption</label>
+ 	   	<div >
+ 	     		<input type="number" name="designedspecificpowerconsumption"  class="form-control" id="designedspecificpowerconsumption">
+ 	   	</div>
+ 	 </div>
+ 	  <button type="button" class="btn btn-primary">DataBank</button>
+ 	  <button type="button" class="btn btn-primary">Retrieve</button>
+
+
+ 	</div>
+ 	<div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6">
+	 <div class="form-group">
+ 	  <h3> 	<label >Leak Qualification</label></h3>
+ 	 </div>
+ 	 <div class="form-group">
+ 	  <h3> 	<label >Measured values</label></h3>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="averageloadingtime">Average Loading Time</label>
+ 	   	<div >
+ 	     		<input type="number" name="averageloadingtime" placeholder="Min" class="form-control" id="averageloadingtime">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="averageunloadingtime">Average Unloading Time</label>
+ 	   	<div >
+ 	     		<input type="number" name="averageunloadingtime" placeholder="Min" class="form-control" id="averageunloadingtime">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="compressor">Compressor CFM</label>
+ 	   	<div >
+ 	     		<input type="number" name="compressor" placeholder="CFM"  class="form-control" id="compressor">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="specificpowerconsumption">Specific power consumption</label>
+ 	   	<div >
+ 	     		<input type="number" name="specificpowerconsumption" placeholder="KW/CFM"  class="form-control" id="specificpowerconsumption">
+ 	   	</div>
+ 	 </div>
+ 	
+ 	 <div class="form-group">
+ 	  <h3> 	<label >Calculation</label></h3>
+ 	 </div>
+ 	
+ 	 <div class="form-group">
+ 	   	<label  for="leakageqty">Leakage Qty</label>
+ 	   	<div >
+ 	     		<input type="number" name="leakageqty" placeholder="CFM" class="form-control" id="leakageqty">
+ 	   	</div>
+ 	 </div>
+ 	 <button type="button" class="btn btn-primary">Calculate</button>
+	
+ <button type="button" class="btn btn-primary">Save</button>
+
+	<div class="form-group">
+ 	  <h3> 	<label >Capacity Assesment Calculation</label></h3>
+ 	 </div>
+ 	
+
+	<div class="form-group">
+	<div class="form-group">
+ 	   	<label  for="initialpressure">Initial Pressure</label>
+ 	   	<div >
+ 	     		<input type="number"  name="initialpressure" placeholder="Kg/Cm2"  class="form-control" id="initialpressure">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="finalpressure">Final Pressure</label>
+ 	   	<div >
+ 	     		<input type="number"  name="finalpressure" placeholder="Kg/Cm2"  class="form-control" id="finalpressure">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="atmosphericpressure">Atmospheric Pressure</label>
+ 	   	<div >
+ 	     		<input type="number"  name="atmosphericpressure" placeholder="Kg/Cm2"  class="form-control" id="atmosphericpressure">
+ 	   	</div>
+ 	 </div>
+ 	
+ 	
+ 	 <div class="form-group">
+ 	   	<label  for="storagevolume">Storage Volume</label>
+ 	   	<div >
+ 	     		<input type="number"  name="storagevolume"  class="form-control" id="storagevolume">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="timetobuildupfinalpressure">Time to build up final pressure</label>
+ 	   	<div >
+ 	     		<input type="number"  name="timetobuildupfinalpressure" placeholder="Min"  class="form-control" id="timetobuildupfinalpressure">
+ 	   	</div>
+ 	 </div>
+
+ 	  <div class="form-group">
+ 	   	<label  for="tempcorrectionfactor">Temp. Correction Factor</label>
+ 	   	<div >
+ 	     		<input type="number"  name="tempcorrectionfactor"  class="form-control" id="tempcorrectionfactor">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="compressoroutput">Compressor Output</label>
+ 	   	<div >
+ 	     		<input type="number"  name="compressoroutput" placeholder="M3/Min"  class="form-control" id="compressoroutput">
+ 	   	</div>
+ 	 </div>
+ 	
+ 	  <div class="form-group">
+ 	   	<label  for="capacityshortfall">Capacity Shortfall</label>
+ 	   	<div >
+ 	     		<input type="number"  name="capacityshortfall" placeholder="%"  class="form-control" id="capacityshortfall">
+ 	   	</div>
+ 	 </div>
+ 	 <button type="button" class="btn btn-primary">Calculate</button>
+
+ <button type="button" class="btn btn-primary">Save</button>
+ </div>
+	</div>
+<div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6">
+
+ 	 <div>
+ 	  <h3><label  >Air Temperature</label></h3>  </div>
+ 
+ 	<div class="form-group">
+ 	   	<label  for="ambienttemp">Ambient Temp</label>
+ 	   	<div >
+ 	     		<input type="number" name="ambienttemp" placeholder="Deg C" class="form-control" id="ambienttemp">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="suctionairtemp">Suction Air Temp</label>
+ 	   	<div >
+ 	     		<input type="number"  name="suctionairtemp" placeholder="Deg C"  class="form-control" id="suctionairtemp">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="dischargeairtemp">Discharge Air Temp</label>
+ 	   	<div >
+ 	     		<input type="number"  name="dischargeairtemp" placeholder="Deg C"  class="form-control" id="dischargeairtemp">
+ 	   	</div>
+ 	 </div>
+ 	 <h3><label  >Calculation of volumetric Efficiency</label></h3> 	
+ 	 
+ 	 <h3><label  >Measured Values</label></h3> 	
+ 	 
+ 	  <div class="form-group">
+ 	   	<label  for="suctionarea">Suction Area</label>
+ 	   	<div >
+ 	     		<input type="number"  name="suctionarea" placeholder="Sq.M"  class="form-control" id="suctionarea">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="airsuctionvelocity">Air Suction Velocity</label>
+ 	   	<div >
+ 	     		<input type="number"  name="airsuctionvelocity" placeholder="Meter/sec"  class="form-control" id="airsuctionvelocity">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="operatingpressure">Operating Pressure</label>
+ 	   	<div >
+ 	     		<input type="number"  name="operatingpressure" placeholder="Kg/Cm2"  class="form-control" id="operatingpressure">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="inputpower">Input Power</label>
+ 	   	<div >
+ 	     		<input type="number"  name="inputpower" placeholder="KW"  class="form-control" id="inputpower">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="designedflowatoperatingpressure">Designed Flow At Operating Pressure</label>
+ 	   	<div >
+ 	     		<input type="number"  name="designedflowatoperatingpressure" placeholder="CFM"  class="form-control" id="designedflowatoperatingpressure">
+ 	   	</div>
+ 	 </div>
+
+ 	 <h3><label  >Calculated Values</label></h3> 	
+
+ 	  <div class="form-group">
+ 	   	<label  for="flow">Flow</label>
+ 	   	<div >
+ 	     		<input type="number"  name="flow" placeholder="M3/Sec"  class="form-control" id="flow">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="flowincfm">Flow in CFM</label>
+ 	   	<div >
+ 	     		<input type="number"  name="flowincfm"  class="form-control" id="flowincfm">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="calculatedflowatnormalcondition">Calculated Flow at normal condition</label>
+ 	   	<div>
+ 	     		<input type="number"  name="calculatedflowatnormalcondition"  class="form-control" id="calculatedflowatnormalcondition">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="volumetricefficiency">Volumetric Efficiency</label>
+ 	   	<div >
+ 	     		<input type="number"  name="volumetricefficiency" placeholder="%"  class="form-control" id="volumetricefficiency">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="specificpowerconsumption1">Specific power consumption</label>
+ 	   	<div >
+ 	     		<input type="number" name="specificpowerconsumption1" placeholder="KW/CFM" class="form-control" id="specificpowerconsumption1">
+ 	   	</div>
+ 	 </div>
+ 	 <button type="button" class="btn btn-primary">Calculate</button>
+
+ 	 
+ 	  <div class="form-group">
+ 	   	<label  for="anticipatedimprovementinvolumetriceff">Anticipated improvement in volumetric Eff.</label>
+ 	   	<div >
+ 	     		<input type="number"  name="anticipatedimprovementinvolumetriceff" placeholder="%"  class="form-control" id="anticipatedimprovementinvolumetriceff">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="powersavingpotential">Power Saving Potential</label>
+ 	   	<div >
+ 	     		<input type="number"  name="powersavingpotential" placeholder="KW"  class="form-control" id="powersavingpotential">
+ 	   	</div>
+ 	 </div>
+ 	
+  <button type="button" class="btn btn-primary">Calculate</button>
+
+ <button type="button" class="btn btn-primary">Close</button>
+	
+
+  </div>
+  <button type="button" class="btn btn-primary">Print</button>
+  <button type="button" class="btn btn-primary">Close</button>
+
+
+  
+  </div>
+ </form>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

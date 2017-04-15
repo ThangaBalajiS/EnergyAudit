@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="38px" src="PSG.png">
+      <img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="38px" src="ealogo.png">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="plantip.html">Plants</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Equipments <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="motor.html">Motors</a></li>
+            <li><a href="transformer.html">Transformers</a></li>
+            <li><a href="lighting.html">Lighting</a></li>
+            <li><a href="ExistingPump.html">Pumps</a></li>
+            <li><a href="ExistingCompressor.html">Compressor</a></li>
+          </ul>
+        </li>
+        <li><a href="standard_motor.html">Standard Motor</a></li>
+        <li><a href="EnergyEfficientMotor.html">Efficient Motor</a></li>
+        <li><a href="EnergyEfficientPump.html">Efficient Pump</a></li>
+
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analysis <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="EnergyAnalysisMotor.html">Energy Efficient Motor</a></li>
+            <li><a href="Standardmotorvsenergyeffmotor.html">Standard Motor vs Energy Eff. Motor</a></li>
+            <li><a href="#">Existing Transformer</a></li>
+            <li><a href="ExistingPump.html">Pumps</a></li>
+            <li><a href="ExistingCompressor.html">Compressor</a></li>
+            <li><a href="newtransformer.html">New Transformer</a></li>
+            <li><a href="#">New Cable</a></li>
+            <li><a href="capacitorbank.html">Capacitor Bank</a></li>
+            <li><a href="#">Lighting Analysis</a></li>
+            <li><a href="#">Compressor Analysis</a></li>
+            <li><a href="#">Existing Pump vs Energy Eff. Pump</a></li>  
+          </ul>
+        </li>
+
+      </ul>
+
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+<img height="40px" style="border-radius: 25px; margin-top: 5px;" src="user.png">
+        <li><a href="#">UserName</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div id = "fullDiv">
+  <div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6" >
+   <div class="form-group">
+    <h3>  <label  for="pumpid">Measured Parameters</label></h3>
+     </div>
+   <div class="form-group">
+      <label  for="pumpinletpressure">Pump inlet pressure</label>
+      <div>
+          <input type="number" name="pumpinletpressure"  placeholder="Kg/Cm2" class="form-control" id="pumpinletpressure">
+      </div>
+   </div>
+   
+    <div class="form-group">
+      <label  for="pumpoutletpressure">Pump Outlet pressure</label>
+      <div >
+          <input type="number" name="pumpoutletpressure" placeholder="Kg/Cm2" class="form-control" id="pumpoutletpressure">
+      </div>
+   </div>
+  <div class="form-group">
+      <label  for="level">Level difference between sump water level and center line of pump</label>
+      <div >
+          <input type="number" name="level" placeholder="M" class="form-control" id="level">
+      </div>
+   </div>
+   <div class="form-group">
+      <label  for="flow">Flow</label>
+      <div >
+          <input type="number"  name="flow" placeholder="M3/Sec"  class="form-control" id="flow">
+      </div>
+   </div>
+   <div class="form-group">
+      <label  for="motorinputpower">Motor Input Power</label>
+      <div >
+          <input type="number" name="motorinputpower" placeholder="KW" class="form-control" id="motorinputpower">
+      </div>
+   </div>
+   <div class="form-group">
+      <label  for="motorefficiency">Motor Efficiency</label>
+      <div >
+          <input type="number" name="motorefficiency" placeholder="%"  class="form-control" id="motorefficiency">
+      </div>
+   </div>
+   <div class="form-group">
+      <label  for="fluidspecificgravity">Fluid Specific gravity</label>
+      <div >
+          <input type="number" name="fluidspecificgravity"  class="form-control" id="fluidspecificgravity">
+      </div>
+   </div>
+  
+    <div class="form-group">
+      <label  for="fluiddensity">Fluid density</label>
+      <div >
+          <input type="number" name="fluiddensity" placeholder="Kg/m3" class="form-control" id="fluiddensity">
+      </div>
+   </div>
+
+  </div>
+  <div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6">
+  <div class="form-group">
+    <h3><label  >Pump Hydraulic Power Calculation</label></h3>  
+   </div>
+
+   <div class="form-group">
+      <label  for="suctionhead">Suction Head</label>
+      <div >
+          <input type="number"  name="suctionhead" placeholder="M"  class="form-control" id="suctionhead">
+      </div>
+   </div>
+   <div class="form-group">
+      <label  for="dischargehead">Discharge Head</label>
+      <div >
+          <input type="number"  name="dischargehead" placeholder="M"  class="form-control" id="dischargehead">
+      </div>
+   </div>
+    <div class="form-group">
+      <label  for="totalhead">Total Head</label>
+      <div >
+          <input type="number"  name="totalhead" placeholder="M"  class="form-control" id="totalhead">
+      </div>
+   </div>
+  <div class="form-group">
+      <label  for="hydraulicpower">Hydraulic Power</label>
+      <div >
+          <input type="number" name="hydraulicpower" placeholder="KW" class="form-control" id="hydraulicpower">
+      </div>
+   </div>
+   <button type="button" onclick="cal();" class="btn btn-primary">Calculate</button>
+
+  <div class="form-group">
+    <h3><label  >Efficiency Calculation</label></h3>  
+   </div>
+  <div class="form-group">
+      <label  for="shaftpower">Shaft Power</label>
+      <div >
+          <input type="number" name="shaftpower" placeholder="KW" class="form-control" id="shaftpower">
+      </div>
+   </div>
+   <div class="form-group">
+      <label  for="pumpefficiency">Pump Efficiency</label>
+      <div >
+          <input type="number" name="pumpefficiency" placeholder="%"  class="form-control" id="pumpefficiency">
+      </div>
+   </div>
+  <div class="form-group">
+      <label  for="overallefficiency">Overall Efficiency</label>
+      <div >
+          <input type="number" name="overallefficiency"  placeholder="%" class="form-control" id="overallefficiency">
+      </div>
+   </div> 
+
+  
+ <button type="button" onclick="call();" class="btn btn-primary">Calculate</button>
+
+<button type="button" class="btn btn-primary">Close</button>
+
+  </div>
+  
+  </div>
+ 
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+function cal()
+{
+  var pip=$('#pumpinletpressure').val();
+  var pop=$('#pumpoutletpressure').val();
+  var ldbs=$('#level').val();
+  var flow=$('#flow').val();
+  var mip=$('#motorinputpower').val();
+  var meff=$('#motorefficiency').val();
+  var flsg=$('#fluidspecificgravity').val();
+  var fldy=$('#fluiddensity').val();
+
+  var shead=Number(pip*10).toFixed(2);
+  var dhead=Number(pop*10).toFixed(2);
+  var head=Number(((pop-pip)*10)/flsg).toFixed(2);
+  var thead=Number(parseFloat(head)+parseFloat(ldbs)).toFixed(2);
+  var hp=Number((thead*flow*9.8*fldy)/1000).toFixed(2);
+  $('#suctionhead').val(shead);
+  $('#dischargehead').val(dhead);
+  $('#totalhead').val(thead);
+  $('#hydraulicpower').val(hp);
+}
+
+function call()
+{
+  var mip1=$('#motorinputpower').val();
+  var meff1=$('#motorefficiency').val();
+  var hp1=$('#hydraulicpower').val();
+    alert(mip1);
+
+  var sp=Number((mip1*meff1)/100).toFixed(2);
+  var peff=Number(100*hp1/sp).toFixed(2);
+  var oeff=Number(hp1/mip1*100).toFixed(2);
+  $('#shaftpower').val(sp);
+  $('#pumpefficiency').val(peff);
+  $('#overallefficiency').val(oeff);
+
+ 
+  
+}
+</script>
+</body>
+</html>

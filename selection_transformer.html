@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body id="itsBody" >
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="38px" src="PSG.png">
+      <img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="38px" src="ealogo.png">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="plantip.html">Plants</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Equipments <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="motor.html">Motors</a></li>
+            <li><a href="transformer.html">Transformers</a></li>
+            <li><a href="lighting.html">Lighting</a></li>
+            <li><a href="ExistingPump.html">Pumps</a></li>
+            <li><a href="ExistingCompressor.html">Compressor</a></li>
+          </ul>
+        </li>
+        <li><a href="standard_motor.html">Standard Motor</a></li>
+        <li><a href="EnergyEfficientMotor.html">Efficient Motor</a></li>
+        <li><a href="EnergyEfficientPump.html">Efficient Pump</a></li>
+
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analysis <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="EnergyAnalysisMotor.html">Energy Efficient Motor</a></li>
+            <li><a href="Standardmotorvsenergyeffmotor.html">Standard Motor vs Energy Eff. Motor</a></li>
+            <li><a href="#">Existing Transformer</a></li>
+            <li><a href="ExistingPump.html">Pumps</a></li>
+            <li><a href="ExistingCompressor.html">Compressor</a></li>
+            <li><a href="newtransformer.html">New Transformer</a></li>
+            <li><a href="#">New Cable</a></li>
+            <li><a href="capacitorbank.html">Capacitor Bank</a></li>
+            <li><a href="#">Lighting Analysis</a></li>
+            <li><a href="#">Compressor Analysis</a></li>
+            <li><a href="#">Existing Pump vs Energy Eff. Pump</a></li>	
+          </ul>
+        </li>
+
+      </ul>
+
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+<img height="40px" style="border-radius: 25px; margin-top: 5px;" src="user.png">
+        <li><a href="#">UserName</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div id = "fullDiv">
+	<div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6" >
+	<div class="form-group">
+ 	   	<label >Loading for Max Efficiency</label>
+ 	</div>
+ 	
+	<div class="form-group">
+ 	   	<label  for="ratingoftransformer">Rating of Transformer</label>
+ 	   	<div>
+ 	     		<input type="number" name="ratingoftransformer" placeholder="KVA" class="form-control" id="ratingoftransformer">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="voltage">Voltage</label>
+ 	   	<div>
+ 	     		<input type="number" name="voltage"  placeholder="KV"  class="form-control" id="voltage">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="current">Current</label>
+ 	   	<div>
+ 	     		<input type="number" name="current" placeholder="Amp" class="form-control" id="current">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="noloadlosses">No Load Losses</label>
+ 	   	<div>
+ 	     		<input type="number" name="noloadlosses"  placeholder="W" class="form-control" id="noloadlosses">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="loadlosses">Load Losses</label>
+ 	   	<div>
+ 	     		<input type="number" name="loadlosses" placeholder="W" class="form-control" id="loadlosses">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="powerfactor">Power Factor</label>
+ 	   	<div>
+ 	     		<input type="number" name="powerfactor" class="form-control" id="powerfactor">
+ 	   	</div>
+ 	 </div>
+ 	 </div>
+ 	 <div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6" >
+	<div class="form-group">
+ 	   	<label >Calculated Values</label>
+ 	</div>
+ 	
+	<div class="form-group">
+ 	   	<label  for="loadfactor">Load Factor</label>
+ 	   	<div>
+ 	     		<input type="number" name="loadfactor" class="form-control" id="loadfactor">
+ 	   	</div>
+ 	 </div>
+ 	<div class="form-group">
+ 	   	<label  for="loadfactorformaxefficiency">Load-Factor for Max Efficiency</label>
+ 	   	<div>
+ 	     		<input type="number" name="loadfactorformaxefficiency" class="form-control" id="loadfactorformaxefficiency">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="transformerefficiency">Transformer Efficiency</label>
+ 	   	<div>
+ 	     		<input type="number" name="transformerefficiency" placeholder="%" class="form-control" id="transformerefficiency">
+ 	   	</div>
+ 	 </div>
+ 	
+ 	<button type="button" onclick="cal();" class="btn btn-primary">calculate</button>
+ 	<button type="close" class="btn btn-primary">close</button>
+ 	
+</div>
+ 	
+  </div>
+
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+function cal() 
+{	
+	var rattran = $('#ratingoftransformer').val();
+	var volt = $('#voltage').val();
+	var current =$('#current').val();
+	var noloss =$('#noloadlosses').val();
+	var loadloss =$('#loadlosses').val();
+	var powerfac =$('#powerfactor').val();
+
+    var ldfac=Number(Math.sqrt(3)*volt*current/rattran).toFixed(2);
+    $('#loadfactor').val(ldfac);
+    var ldfacmaxeff=Number(Math.sqrt(noloss/loadloss)).toFixed(2);
+    $('#loadfactorformaxefficiency').val(ldfacmaxeff);
+    var traneff=Number((ldfac*rattran*powerfac*1000*100)/((parseFloat(ldfac*rattran*powerfac*1000)+parseFloat(Math.pow(ldfac,2))*parseFloat(loadloss)+parseFloat(noloss)))).toFixed(2);
+    $('#transformerefficiency').val(traneff);
+    console.log(traneff);
+}
+</script>
+</body>
+</html>

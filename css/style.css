@@ -1,0 +1,46 @@
+.list-group.panel > .list-group-item {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px
+}
+.list-group-submenu {
+  margin-left:20px;
+}
+
+#fullDiv{
+
+	margin-left: 2%;
+
+
+}
+
+
+
+#sideTwo{
+
+	margin-left: 10px;
+
+}
+
+body .modal{
+
+	margin-left: 5%;
+
+}
+
+.modal-body {
+    max-height: calc(100vh - 212px);
+    overflow-y: auto;
+}
+#MainMenu{
+	height: 100vh;
+}
+
+
+#it sBody{
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, white, red); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, white, blue); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, white, blue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, white, blue); 
+
+}

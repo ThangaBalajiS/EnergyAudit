@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<title>EnergyAnalysis | Motor</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="38px" src="PSG.png">
+      <img alt="EnergyAudit" style="margin-top: 5px; margin-right: 5px;" height="38px" src="ealogo.png">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="plantip.html">Plants</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Equipments <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="motor.html">Motors</a></li>
+            <li><a href="transformer.html">Transformers</a></li>
+            <li><a href="lighting.html">Lighting</a></li>
+            <li><a href="ExistingPump.html">Pumps</a></li>
+            <li><a href="ExistingCompressor.html">Compressor</a></li>
+          </ul>
+        </li>
+        <li><a href="standard_motor.html">Standard Motor</a></li>
+        <li><a href="EnergyEfficientMotor.html">Efficient Motor</a></li>
+        <li><a href="EnergyEfficientPump.html">Efficient Pump</a></li>
+
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analysis <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="EnergyAnalysisMotor.html">Energy Efficient Motor</a></li>
+            <li><a href="Standardmotorvsenergyeffmotor.html">Standard Motor vs Energy Eff. Motor</a></li>
+            <li><a href="#">Existing Transformer</a></li>
+            <li><a href="ExistingPump.html">Pumps</a></li>
+            <li><a href="ExistingCompressor.html">Compressor</a></li>
+            <li><a href="newtransformer.html">New Transformer</a></li>
+            <li><a href="#">New Cable</a></li>
+            <li><a href="capacitorbank.html">Capacitor Bank</a></li>
+            <li><a href="#">Lighting Analysis</a></li>
+            <li><a href="#">Compressor Analysis</a></li>
+            <li><a href="#">Existing Pump vs Energy Eff. Pump</a></li>	
+          </ul>
+        </li>
+
+      </ul>
+
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+<img height="40px" style="border-radius: 25px; margin-top: 5px;" src="user.png">
+        <li><a href="#">UserName</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  
+<div id ="fullDiv" >
+<div id="sideOne" class="container col-lg-4 col-md-4 col-sm-6 col-xs-10" >
+<label><h1>Energy Saving Analysis</h1></label>
+<br/>
+
+<input type="hidden" id="pname">
+		<div class="form-group">
+		 	   	<h1>Existing Motor</h1>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label" for="plant">Plant</label>
+			<div >
+				<input type="name" name="plant" class="form-control" id="plant" readonly="true" >
+				<button class="btn btn-primary"  onclick="getPlant();">GetPlant</button>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label" for="cntdeqip">Connected Equipment</label>
+			<div >
+				<input type="name" name="connectedequipment" class="form-control" id="cntdeqip">
+			</div>
+		</div>
+		
+
+		<div class="form-group">
+		<div class="form-group">
+	 	   	<h1>Parameter: Existing Motor</h1>
+	 	</div>
+		<div class="form-group">
+		<label class="control-label" for="kw">KW:</label>
+		<div >
+			<input type="number" name="kw" class="form-control" id="kw">
+		</div>
+		</div>
+		<div class="form-group">
+		<label class="control-label" for="voltage">Voltage (Volts)
+		</label>
+		<div >
+			<input type="number" name="voltage" class="form-control" id="voltage">
+		</div>
+		</div>
+		<div class="form-group">
+		<label class="control-label" for="current">Current (Amp)
+		</label>
+		<div >
+			<input type="number" name="current" class="form-control" id="current">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="frame">Frame</label>
+		<div >
+			<input type="name" name="frame" class="form-control" id="frame">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="speed">Speed (RPM)
+		</label>
+		<div >
+			<input type="number" name="speed" class="form-control" id="speed">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="enclosure">Enclosure
+		</label>
+		<div >
+			<input type="name" name="enclosure" class="form-control" id="enclosure">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="control-label" for="runghours">Running Hours/years</label>
+		<div >
+			<input type="number" name="runninghours" class="form-control" id="runghours">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="loading">Loading (%)
+		</label>
+		<div >
+			<input type="number" name="loading" class="form-control" id="loading">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="effcyprtlod">Efficiency PartLoad</label>
+		<div >
+			<input type="number" name="efficiencypartload" class="form-control" id="effcyprtlod">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="load">Load Type
+		</label>
+		<div >
+			<input type="name" name="loadtype" class="form-control" id="load">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="motor">Motor Price(Rs)
+		</label>
+		<div >
+			<input type="number" name="motorprice" class="form-control" id="motor">
+
+		</div>
+	</div>
+	<button class="btn btn-primary"  onclick="getMotors();" >DataBank</button>
+	</div>
+	</div>
+
+	<div id="sideTwo" class="container col-lg-4 col-md-4 col-sm-5 col-xs-5">
+	<div  class="form-group">
+	 	   	<h1>Parameter: Energy Saving Motor</h1>
+	 	</div>
+		<div class="form-group">
+		<label class="control-label" for="kw1">KW:</label>
+		<div >
+			<input type="number" name="kw1" class="form-control" id="kw1">
+		</div>
+		</div>
+		<div class="form-group">
+		<label class="control-label" for="voltage1">Voltage (Volts)
+		</label>
+		<div >
+			<input type="number" name="voltage1" class="form-control" id="voltage1">
+		</div>
+		</div>
+		<div class="form-group">
+		<label class="control-label" for="current">Current (Amp)
+		</label>
+		<div >
+			<input type="number" name="current1" class="form-control" id="current1">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="frame1">Frame</label>
+		<div >
+			<input type="name" name="frame1" class="form-control" id="frame1">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="speed1">Speed (RPM)
+		</label>
+		<div >
+			<input type="number" name="speed1" class="form-control" id="speed1">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="enclosure1">Enclosure
+		</label>
+		<div >
+			<input type="name" name="enclosure1" class="form-control" id="enclosure1">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="control-label" for="runghours1">Running Hours/years</label>
+		<div >
+			<input type="number" name="runninghoursyear1" class="form-control" id="runghours1">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="loading1">Loading (%)
+		</label>
+		<div >
+			<input type="number" name="loading1" class="form-control" id="loading1">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="effcyprtlod1">Efficiency PartLoad</label>
+		<div >
+			<input type="number" name="efficiencypartload1" class="form-control" id="effcyprtlod1">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="load1">Load Type
+		</label>
+		<div >
+			<input type="name" name="loadtype1" class="form-control" id="load1">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="motor1">Motor Price(Rs)
+		</label>
+		<div >
+			<input type="number" name="motorprice1" class="form-control" id="motor1">
+
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="installcost1">Installation cost(Rs)
+		</label>
+		<div >
+			<input type="number" name="installationcost1" class="form-control" id="installcost1">
+		</div>
+	</div>
+	<button class="btn btn-primary" onclick="getEffMotors();" >DataBank</button>
+	</div>
+</div>
+<div class="container col-lg-4 col-md-4 col-sm-5 col-xs-5" >
+	<label><h2>Energy Efficient Motor</h2></label>
+
+		<div class="form-group">
+			<label class="control-label" for="cost">Cost Of Electricity/Unit(Rs)</label>
+			<div >
+				<input type="number" name="costofelectricity" class="form-control" id="cost">
+			</div>
+		</div>
+		<div class="form-group">
+	 	   	<h1>Energy Saved</h1>
+	 	</div>
+		<div class="form-group">
+			<label class="control-label" for="energy">Energy Saved(KWH)</label>
+			<div >
+				<input type="number" name="energysaved" class="form-control" id="energy">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label" for="costE">Cost Of Saved Energy(Rs)</label>
+			<div >
+				<input type="number" name="costofsavedenergy" class="form-control" id="costE">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label" for="payback">Payback Period(Months)</label>
+			<div >
+				<input type="number" name="paybackperiod" class="form-control" id="payback">
+			</div>
+		<button class="btn btn-primary" formaction="" onclick="fun();" >Calculate</button>
+		</div>
+
+
+
+
+<button class="btn btn-primary" onclick="goBaby();" >Show Report</button>
+<button class="btn btn-primary" formaction="" onclick="" >Close</button>
+</div>
+</div>
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h4 class="modal-title">List Of Plants</h4>
+        </div>
+        <div class="modal-body">
+           <div id="mdiv"  >
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript"> 
+function fun()
+{
+	
+	var exld=$('#loading').val();
+	var exld1=Number(exld/100).toFixed(2);
+	var runhr=$('#runghours').val();
+	var kw=$('#kw').val();
+	var eff=$('#effcyprtlod').val();
+	var effy=Number(eff/100).toFixed(2);
+	var kw1=$('#kw1').val();
+	var eff1=$('#effcyprtlod1').val();
+	var eff1y=Number(eff1/100).toFixed(2);
+	var echrg=$('#cost').val();
+	var egysd=Number((exld1*runhr*((kw/effy)-(kw1/eff1y)))).toFixed(2);
+	$('#energy').val(egysd);
+    var cergsd=Number(echrg*egysd).toFixed(2);
+    $('#costE').val(cergsd);
+    var price=$('#motor1').val();
+    var paypd=Number(price*(12/cergsd)).toFixed(2);
+    $('#payback').val(paypd);
+
+}
+
+var md = document.getElementById('mdiv');
+function getMotors() {
+    md.innerHTML = null;
+    $('#myModal1').modal('show');    
+    
+      $.ajax({
+  type: 'POST',
+  url: 'php/getMts.php',
+  data: {  },
+  beforeSend:function(){
+    // this is where we append a loading image
+    console.log("imgld");
+    
+  },
+  success:function(data){
+    // successful request; do something with the data
+    
+    var obj = JSON.parse(data);
+     console.log(obj[0]["motorid"] + obj[0]["manufacturer"]);
+
+     for (var i = 0; i < obj.length; i++) {
+      md.innerHTML = md.innerHTML + "<a onclick='ff(\""+ obj[i]["motorid"] +"\");' class='list-group-item'>" +obj[i]["motorid"]+"-"+obj[i]["manufacturer"]+"</a>";
+
+     }
+
+
+  },
+  error:function(){
+    // failed request; give feedback to user
+    console.log("err");
+    $('#ajax-panel').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+  }
+});
+
+
+}
+
+function ff(a) {
+
+console.log(a);
+   $.ajax({
+  type: 'POST',
+  url: 'php/shMotor.php',
+  data: {g:a},
+  beforeSend:function(){
+    // this is where we append a loading image
+    console.log("imgld");
+    
+  },
+  success:function(data){
+    // successful request; do something with the data
+    console.log(data);
+    var obj1 = JSON.parse(data);
+     // console.log(obj1[0]["plantid"] + obj1[0]["name"]);
+
+     $('#cntdeqip').val(obj1[0]["connectedequipment"])
+     $('#kw').val(obj1[0]["kw"]);
+     $('#voltage').val(obj1[0]["voltage"]);
+     $('#current').val(obj1[0]["current"]);
+     $('#frame').val(obj1[0]["frame"]);
+     $('#speed').val(obj1[0]["speed"]);
+     $('#enclosure').val(obj1[0]["encloure"]);
+     $('#runghours').val(obj1[0]["runninghoursyear"]);
+     $('#loading').val(obj1[0]["loading"]);
+     $('#effcyprtlod').val(obj1[0]["partloadeff"]);
+     $('#load').val(obj1[0]["loadtype"]);
+     $('#motor').val();
+
+  $('#myModal1').modal('hide');
+    
+  },
+  error:function(){
+    // failed request; give feedback to user
+    console.log("err");
+    $('#ajax-panel').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+  }
+});
+}
+
+var md = document.getElementById('mdiv');
+function getEffMotors() {
+    md.innerHTML = null;
+    $('#myModal1').modal('show');    
+    
+      $.ajax({
+  type: 'POST',
+  url: 'php/getEffMts.php',
+  data: {  },
+  beforeSend:function(){
+    // this is where we append a loading image
+    console.log("imgld");
+    
+  },
+  success:function(data){
+    // successful request; do something with the data
+    
+    var obj = JSON.parse(data);
+     console.log(obj[0]["motorid"] + obj[0]["manufacturer"]);
+
+     for (var i = 0; i < obj.length; i++) {
+      md.innerHTML = md.innerHTML + "<a onclick='ffe(\""+ obj[i]["motorid"] +"\");' class='list-group-item'>" +obj[i]["motorid"]+"-"+obj[i]["manufacturer"]+"</a>";
+
+     }
+
+
+  },
+  error:function(){
+    // failed request; give feedback to user
+    console.log("err");
+    $('#ajax-panel').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+  }
+});
+
+
+}
+
+function ffe(a) {
+
+   $.ajax({
+  type: 'POST',
+  url: 'php/shEffMotor.php',
+  data: {g:a},
+  beforeSend:function(){
+    // this is where we append a loading image
+    console.log("imgld");
+    
+  },
+  success:function(data){
+    // successful request; do something with the data
+    console.log(data);
+    var obj1 = JSON.parse(data);
+     // console.log(obj1[0]["plantid"] + obj1[0]["name"]);
+
+     
+     $('#kw1').val(obj1[0]["kw"]);
+     $('#voltage1').val(obj1[0]["voltage"]);
+     $('#current1').val(obj1[0]["current"]);
+     $('#frame1').val(obj1[0]["frame"]);
+     $('#speed1').val(obj1[0]["speed"]);
+     $('#enclosure1').val(obj1[0]["enclosure"]);
+     $('#runghours1').val(obj1[0]["runninghrsperyear"]);
+     $('#loading1').val(obj1[0]["partload"]);
+     $('#effcyprtlod1').val(obj1[0]["effpartload"]);
+     $('#motor1').val(obj1[0]["price"]);
+     $('#installcost1').val(obj1[0]["installationcost"]);
+     
+
+  $('#myModal1').modal('hide');
+    
+  },
+  error:function(){
+    // failed request; give feedback to user
+    console.log("err");
+    $('#ajax-panel').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+  }
+});
+}
+
+
+
+function getPlant() {
+    md.innerHTML = null;
+    $('#myModal1').modal('show');    
+    
+      $.ajax({
+  type: 'POST',
+  url: 'php/getplns.php',
+  data: {  },
+  beforeSend:function(){
+    // this is where we append a loading image
+    console.log("imgld");
+    
+  },
+  success:function(data){
+    // successful request; do something with the data
+    
+    var obj = JSON.parse(data);
+
+     for (var i = 0; i < obj.length; i++) {
+      md.innerHTML = md.innerHTML + "<a onclick='f(\""+ obj[i]["plantid"] +"\");' class='list-group-item'>" +obj[i]["plantid"]+"-"+obj[i]["name"]+"</a>";
+     }
+
+
+  },
+  error:function(){
+    // failed request; give feedback to user
+    console.log("err");
+    $('#ajax-panel').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+  }
+});
+}
+function f(a) {
+  console.log(a);
+   $.ajax({
+  type: 'POST',
+  url: 'php/getapnt.php',
+  data: {id:a},
+  beforeSend:function(){
+    // this is where we append a loading image
+    console.log("imgld");
+    
+  },
+  success:function(data){
+    // successful request; do something with the data
+    console.log("imgssssld");
+    var obj1 = JSON.parse(data);
+     // console.log(obj1[0]["plantid"] + obj1[0]["name"]);
+  $('#plant').val(obj1[0]["plantid"]);
+  $('#pname').val(obj1[0]["name"]);
+  
+
+  $('#myModal1').modal('hide');
+    
+  },
+  error:function(){
+    // failed request; give feedback to user
+    console.log("err");
+    $('#ajax-panel').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+  }
+});
+}
+
+
+function goBaby() {
+
+//motor details
+var partload = $('#loading').val();
+var effpartload = $('#effcyprtlod').val();
+var kw = $('#kw').val();
+var voltage = $('#voltage').val();
+var speed = $('#speed').val();
+var frame = $('#frame').val();
+var enclosure = $('#enclosure').val();
+//ea motor details
+var partload1 = $('#loading1').val();
+var effpartload1 = $('#effcyprtlod1').val();
+var kw1 = $('#kw1').val();
+var voltage1 = $('#voltage1').val();
+var speed1 = $('#speed1').val();
+var frame1 = $('#frame1').val();
+var enclosure1 = $('#enclosure1').val();
+//results
+var cost = $('#cost').val();
+var rh = $('#runghours').val();
+var energy = $('#energy').val();
+var coste = $('#costE').val();
+var payb = $('#payback').val();
+
+var plnid = $("#pname").val();
+var eq = $('#cntdeqip').val();
+
+
+
+  $.ajax({
+  type: 'POST',
+  url: 'php/insTEas.php',
+  data: { partload:partload,effpartload:effpartload,kw:kw,voltage:voltage,speed:speed,frame:frame,enclosure:enclosure,partload1:partload1,effpartload1:effpartload1,kw1:kw1,voltage1:voltage1,speed1:speed1,frame1:frame1,enclosure1:enclosure1,rh:rh,energy:energy,coste:coste,payb:payb,cost:cost,plnid:plnid,eq:eq},
+  beforeSend:function(){
+    // this is where we append a loading image
+    console.log("imgld");
+    
+  },
+  success:function(data){
+    // successful request; do something with the data
+
+    console.log(data);
+    window.location.href = "ReportGeneration.html"
+    
+  },
+  error:function(){
+    // failed request; give feedback to user
+    console.log("err");
+    $('#ajax-panel').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+  }
+});
+}
+
+ </script>
+</body>
+</html>

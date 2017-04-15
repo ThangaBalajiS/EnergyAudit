@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid"> 
+<h1>EnergyAudit</h1> 
+  <hr>
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-sm-4 col-xs-6">
+    
+      
+      <!-- menu -->
+      <div id="MainMenu">
+        <div class="list-group panel">
+          <a href="plantip.html" id="plnt" class="list-group-item list-group-item-success" data-parent="#MainMenu">Plant Details</a>
+          
+          <a href="#demo3" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Electrical Equipments<i class="fa fa-caret-down"></i></a>
+          <div class="collapse" id="demo3">
+            <a href="motor.html" class="list-group-item">Motors<i class="fa fa-caret-down"></i></a>
+            <a href="transformer.html" class="list-group-item">Transformers<i class="fa fa-caret-down"></i></a>
+            <a href="lighting.html" class="list-group-item">Lighting<i class="fa fa-caret-down"></i></a>
+            <a href="ExistingPump.html" class="list-group-item">Pumps<i class="fa fa-caret-down"></i></a>
+            <a href="ExistingCompressor.html" class="list-group-item">Compressor<i class="fa fa-caret-down"></i></a>
+            <a href="air_conditioning.html" class="list-group-item" >Air Conditioning<i class="fa fa-caret-down"></i></a>
+          </div>
+          <a href="standard_motor.html" class="list-group-item list-group-item-success" data-parent="#MainMenu">Standard Motor</a>
+          <a href="EnergyEfficientMotor.html" class="list-group-item list-group-item-success" data-parent="#MainMenu">Energy Efficient Motor</a>
+          <a href="EnergyEfficientPump.html" class="list-group-item list-group-item-success" data-parent="#MainMenu">Energy Efficient Pump</a>
+          <a href="#demo4" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Energy Saving Analysis<i class="fa fa-caret-down"></i></a>
+          <div class="collapse" id="demo4">
+            <a href="EnergyAnalysisMotor.html" class="list-group-item">Energy Efficient Motor</a>
+            <a href="Standardmotorvsenergyeffmotor.html" class="list-group-item">Standard Motor vs Energy Eff. Motor</a>
+            <a href="" class="list-group-item">Existing Transformer</a>
+            <a href="newtransformer.html" class="list-group-item">New Transformer</a>
+            <a href="" class="list-group-item">New Cable</a>
+            <a href="capacitorbank.html" class="list-group-item">Capacitor Bank</a>
+            <a href="" class="list-group-item">Lighting Analysis</a>
+            <a href="" class="list-group-item">Compressor Analysis</a>
+            <a href="" class="list-group-item">Existing Pump vs Energy Eff. Pump</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+<form class="form-horizontal">
+<div id = "fullDiv">
+	<div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6" >
+	<div class="form-group">
+ 	   	 <div>
+ 	     		 <button type="button" class="btn btn-primary">Energy Saving by Speed Variation</button>
+ 	     		  <button type="button" class="btn btn-primary">Energy Saving by Changing Pump Impeller</button>
+
+ 	   	</div>
+ 	 </div>
+ 	 
+	 <div class="form-group">
+ 	  <h3> 	<label >Calculation</label></h3>
+ 	   </div>
+ 	  <div class="form-group">
+ 	   	<label  for="electricitycostunit">Electricity Cost/Unit</label>
+ 	   	<div >
+ 	     		<input type="number" name="electricitycostunit" placeholder="Rs" class="form-control" id="electricitycostunit">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="runninghoursyear">Running hours/year</label>
+ 	   	<div >
+ 	     		<input type="number" name="runninghoursyear"  class="form-control" id="runninghoursyear">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="energysaved">Energy Saved</label>
+ 	   	<div >
+ 	     		<input type="number" name="energysaved" placeholder="KWR" class="form-control" id="energysaved">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="costofsavedenergy">Cost of Saved Energy</label>
+ 	   	<div >
+ 	     		<input type="number" name="costofsavedenergy"  placeholder="Rs" class="form-control" id="costofsavedenergy">
+ 	   	</div>
+ 	 </div>
+	<div class="form-group">
+ 	   	<label  for="equipmentcost">Equipment Cost</label>
+ 	   	<div >
+ 	     		<input type="number" name="equipmentcost" placeholder="Rs" class="form-control" id="equipmentcost">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="paybackperiod">PayBack Period</label>
+ 	   	<div >
+ 	     		<input type="number"  name="paybackperiod" placeholder="Months"  class="form-control" id="paybackperiod">
+ 	   	</div>
+ 	 </div>
+ 	  <button type="button" class="btn btn-primary">Calculate</button>
+ 	</div>
+ 	<div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6">
+	  <div class="form-group">
+ 	   	<label  for="plant">Plant</label>
+ 	   	<div>
+ 	     		<input type="number" name="plant" class="form-control" id="plant">
+ 	   	</div>
+ 	 </div>
+ 	<div class="form-group">
+ 	  <h3> 	<label >Existing Pump</label></h3>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="equipmentname">Equipment_Name</label>
+ 	   	<div >
+ 	     		<input type="text" name="equipmentname"  class="form-control" id="equipmentname">
+ 	   	</div>
+ 	 </div>
+
+ 	<div class="form-group">
+ 	   	<label  for="equipmentnumber">Equipment_Number</label>
+ 	   	<div >
+ 	     		<input type="number" name="equipmentnumber"  class="form-control" id="equipmentnumber">
+ 	   	</div>
+ 	 </div>
+
+ 	<div class="form-group">
+ 	   	<label  for="headrated">Head-Rated</label>
+ 	   	<div >
+ 	     		<input type="number" name="headrated" placeholder="Meters" class="form-control" id="headrated">
+ 	   	</div>
+ 	 </div>
+ 	
+	<div class="form-group">
+ 	   	<label  for="flowrated">Flow_Rated</label>
+ 	   	<div >
+ 	     		<input type="number" name="flowrated"  placeholder="M3/Sec" class="form-control" id="flowrated">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="speedrated">Speed_Rated</label>
+ 	   	<div >
+ 	     		<input type="number" name="speedrated" placeholder="RPM" class="form-control" id="speedrated">
+ 	   	</div>
+ 	</div>
+ 	<div class="form-group">
+ 	   	<label  for="designedeff">Designed Eff</label>
+ 	   	<div >
+ 	     		<input type="number" name="designedeff" placeholder="%"  class="form-control" id="designedeff">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="motorrating">Motor-Rating</label>
+ 	   	<div >
+ 	     		<input type="number" name="motorrating" placeholder="KW"  class="form-control" id="motorrating">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="motorefficiency">Motor Efficiency</label>
+ 	   	<div >
+ 	     		<input type="number" name="motorefficiency" placeholder="%"  class="form-control" id="motorefficiency">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="headexisting">Head_Existing</label>
+ 	   	<div >
+ 	     		<input type="number"  name="headexisting" placeholder="Meters"  class="form-control" id="headexisting">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="hydraulicpower">Hydraulic Power</label>
+ 	   	<div >
+ 	     		<input type="number" name="hydraulicpower" placeholder="KW" class="form-control" id="hydraulicpower">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="shaftpower">Shaft Power</label>
+ 	   	<div >
+ 	     		<input type="number" name="shaftpower" placeholder="KW" class="form-control" id="shaftpower">
+ 	   	</div>
+ 	 </div>
+	<div class="form-group">
+ 	   	<label  for="effatexistingload">Eff. at Existing Load</label>
+ 	   	<div >
+ 	     		<input type="number" name="effatexistingload" placeholder="%" class="form-control" id="effatexistingload">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="overallefficiency">Overall Efficiency</label>
+ 	   	<div >
+ 	     		<input type="number" name="overallefficiency" placeholder="%" class="form-control" id="overallefficiency">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="motorinput">Motor Input</label>
+ 	   	<div >
+ 	     		<input type="number" name="motorinput" placeholder="KW" class="form-control" id="motorinput">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<div >
+ 	     		 <button type="button" class="btn btn-primary">DataBank</button>
+ 	     		  <button type="button" class="btn btn-primary">Retrieve</button>
+ 	   	</div>
+ 	 </div>
+ 	
+	<br>
+	 <button type="button" class="btn btn-primary">Print</button>
+    <button type="button" class="btn btn-primary">Close</button>
+
+  </div>
+  <div class="container col-lg-4 col-md-4 col-sm-5 col-xs-6" >
+  <div class="form-group">
+ 	   	<label  for="manufacturer">Manufacturer</label>
+ 	   	<div >
+ 	     		<input type="text" name="manufacturer" class="form-control" id="manufacturer">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<h3><label  >Energy Efficient Pump</label></h3>
+ 	  </div>
+     <div class="form-group">
+ 	   	<label  for="equipmentname1">Equipment_Name</label>
+ 	   	<div >
+ 	     		<input type="text" name="equipmentname1"  class="form-control" id="equipmentname1">
+ 	   	</div>
+ 	 </div>
+
+ 	<div class="form-group">
+ 	   	<label  for="equipmentnumber1">Equipment_Number</label>
+ 	   	<div >
+ 	     		<input type="number" name="equipmentnumber1"  class="form-control" id="equipmentnumber1">
+ 	   	</div>
+ 	 </div>
+
+ 	<div class="form-group">
+ 	   	<label  for="headrated1">Head-Rated</label>
+ 	   	<div >
+ 	     		<input type="number" name="headrated1" placeholder="Meters" class="form-control" id="headrated1">
+ 	   	</div>
+ 	 </div>
+ 	
+	<div class="form-group">
+ 	   	<label  for="flowrated1">Flow_Rated</label>
+ 	   	<div >
+ 	     		<input type="number" name="flowrated1"  placeholder="M3/Sec" class="form-control" id="flowrated1">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="speedrated1">Speed_Rated</label>
+ 	   	<div >
+ 	     		<input type="number" name="speedrated1" placeholder="RPM" class="form-control" id="speedrated1">
+ 	   	</div>
+ 	</div>
+ 	<div class="form-group">
+ 	   	<label  for="designedeff1">Designed Eff</label>
+ 	   	<div >
+ 	     		<input type="number" name="designedeff1" placeholder="%"  class="form-control" id="designedeff1">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="motorrating1">Motor-Rating</label>
+ 	   	<div >
+ 	     		<input type="number" name="motorrating1" placeholder="KW"  class="form-control" id="motorrating1">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="motorefficiency1">Motor Efficiency</label>
+ 	   	<div >
+ 	     		<input type="number" name="motorefficiency1" placeholder="%"  class="form-control" id="motorefficiency1">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="headexisting1">Head_Existing</label>
+ 	   	<div >
+ 	     		<input type="number"  name="headexisting1" placeholder="Meters"  class="form-control" id="headexisting1">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="hydraulicpower1">Hydraulic Power</label>
+ 	   	<div >
+ 	     		<input type="number" name="hydraulicpower1" placeholder="KW" class="form-control" id="hydraulicpower1">
+ 	   	</div>
+ 	 </div>
+ 	 <div class="form-group">
+ 	   	<label  for="shaftpower1">Shaft Power</label>
+ 	   	<div >
+ 	     		<input type="number" name="shaftpower1" placeholder="KW" class="form-control" id="shaftpower1">
+ 	   	</div>
+ 	 </div>
+	<div class="form-group">
+ 	   	<label  for="effatexistingload1">Eff. at Existing Load</label>
+ 	   	<div >
+ 	     		<input type="number" name="effatexistingload1" placeholder="%" class="form-control" id="effatexistingload1">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="overallefficiency1">Overall Efficiency</label>
+ 	   	<div >
+ 	     		<input type="number" name="overallefficiency1" placeholder="%" class="form-control" id="overallefficiency1">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<label  for="motorinput1">Motor Input</label>
+ 	   	<div >
+ 	     		<input type="number" name="motorinput1" placeholder="KW" class="form-control" id="motorinput1">
+ 	   	</div>
+ 	 </div>
+ 	  <div class="form-group">
+ 	   	<div >
+ 	     		 <button type="button" class="btn btn-primary">DataBank</button>
+ 	     		  <button type="button" class="btn btn-primary">Retrieve</button>
+ 	   	</div>
+ 	 </div>
+
+  
+  </div>
+ </form>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
