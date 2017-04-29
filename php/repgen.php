@@ -9,10 +9,11 @@ $con = mysqli_connect($servername, $username, $password, $dbname);
 
 $q = "SELECT * FROM  `repg` ORDER BY id DESC LIMIT 1";
 
-$info = mysqli_query($con,$q);
+echo mysqli_query($con,$q);
 	while($var = mysqli_fetch_assoc($info)){
 		$rows[] = $var;
 }
+
 echo json_encode($rows);	
 
 ?>
